@@ -1,0 +1,2 @@
+// const root = '/';
+const login = '/';
