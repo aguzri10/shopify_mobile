@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
           elevation: 0,
           textTheme: TextTheme(
             headline6: TextStyle(
-              fontSize: 16,
+              fontSize: 18,
               fontWeight: FontWeight.w500,
               color: Colors.black,
             ),
