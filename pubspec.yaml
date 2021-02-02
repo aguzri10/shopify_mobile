@@ -35,6 +35,7 @@ dev_dependencies:
     sdk: flutter
   flutter_launcher_icons: ^0.8.1
   floating_bottom_navigation_bar: ^1.4.1
+  intl: ^0.16.1
 
 flutter_icons:
   ios: true

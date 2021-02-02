@@ -1,6 +1,6 @@
 class FlashsaleModel {
   final String id, image, name;
-  final double originalPrice, discount;
+  final int originalPrice, discount;
 
   FlashsaleModel(
       {this.id, this.image, this.name, this.originalPrice, this.discount});

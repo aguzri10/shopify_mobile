@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopify_mobile/core/models/category.dart';
+import 'package:shopify_mobile/core/models/flashsale.dart';
 import 'package:shopify_mobile/styles/asset.dart';
 import 'package:shopify_mobile/styles/colors.dart';
 import 'package:shopify_mobile/styles/dimen.dart';
 import 'package:shopify_mobile/views/widgets/custom_inkwell.dart';
+import 'package:shopify_mobile/views/widgets/product_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -237,6 +239,57 @@ class HomePage extends StatelessWidget {
                       return wSizedBox16;
                     },
                     itemCount: categories.length,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SliverToBoxAdapter(child: SizedBox(height: 24)),
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: paddingHorizontal,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Flash Sale',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: grayscale1,
+                        ),
+                      ),
+                      Text(
+                        'Lihat Lainnya',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: primaryColorNormal.withOpacity(0.60),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 12),
+                AspectRatio(
+                  aspectRatio: 1.75,
+                  child: ListView.separated(
+                    shrinkWrap: true,
+                    padding: paddingHorizontal,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (c, i) {
+                      final flashsale = flashsales[i];
+
+                      return ProductWidget(flashsale: flashsale);
+                    },
+                    separatorBuilder: (c, i) {
+                      return wSizedBox16;
+                    },
+                    itemCount: flashsales.length,
                   ),
                 ),
               ],
