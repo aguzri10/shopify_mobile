@@ -11,6 +11,21 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: primaryColorNormal,
         scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          textTheme: TextTheme(
+            headline6: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: Colors.black,
+            ),
+          ),
+          color: Colors.white,
+          brightness: Brightness.light,
+          iconTheme: IconThemeData(
+            color: Colors.black,
+          ),
+        ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
           isDense: true,

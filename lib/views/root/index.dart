@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shopify_mobile/core/routes/constants.dart';
 
 class Root extends StatefulWidget {
@@ -14,9 +15,14 @@ class _RootState extends State<Root> {
   }
 
   _chekSesion() {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ));
+
     Future.delayed(
       Duration(milliseconds: 100),
-      () => Navigator.pushNamedAndRemoveUntil(context, mainNavigation, (route) => false),
+      () => Navigator.pushNamedAndRemoveUntil(
+          context, mainNavigation, (route) => false),
     );
   }
 
