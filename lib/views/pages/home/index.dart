@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shopify_mobile/core/models/category.dart';
 import 'package:shopify_mobile/styles/asset.dart';
 import 'package:shopify_mobile/styles/colors.dart';
 import 'package:shopify_mobile/styles/dimen.dart';
@@ -164,6 +165,81 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(height: 24),
+          ),
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: paddingHorizontal,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Kategori',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: grayscale1,
+                        ),
+                      ),
+                      Text(
+                        'Kategori Lainnya',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: primaryColorNormal.withOpacity(0.60),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 12),
+                SizedBox(
+                  height: 100,
+                  child: ListView.separated(
+                    shrinkWrap: true,
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (c, i) {
+                      final category = categories[i];
+
+                      return Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(18),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: primaryColorNormal.withOpacity(0.20),
+                              ),
+                            ),
+                            child: SvgPicture.asset(category.icon, width: 24),
+                          ),
+                          hSizedBox8,
+                          Text(
+                            category.name,
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w400,
+                              color: grayscale2,
+                            ),
+                          )
+                        ],
+                      );
+                    },
+                    separatorBuilder: (c, i) {
+                      return wSizedBox16;
+                    },
+                    itemCount: categories.length,
+                  ),
+                ),
+              ],
             ),
           )
         ],

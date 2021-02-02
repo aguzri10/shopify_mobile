@@ -12,3 +12,12 @@ const iconUser = 'assets/svg/user.svg';
 
 // Images
 const promotionImage = 'assets/images/promotion_image.png';
+
+// Icon Category/Products
+const iconDress = 'assets/svg/dress.svg';
+const iconManBag = 'assets/svg/man_bag.svg';
+const iconManShoes = 'assets/svg/man_shoes.svg';
+const iconShirt = 'assets/svg/shirt.svg';
+const iconWomanBag = 'assets/svg/woman_bag.svg';
+const iconWomanShoes = 'assets/svg/woman_shoes.svg';
+
