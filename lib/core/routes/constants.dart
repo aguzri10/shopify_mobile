@@ -1,2 +1,3 @@
-// const root = '/';
-const login = '/';
+const root = '/';
+const login = '/login';
+const mainNavigation = '/home';

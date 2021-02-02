@@ -16,7 +16,7 @@ class _RootState extends State<Root> {
   _chekSesion() {
     Future.delayed(
       Duration(milliseconds: 100),
-      () => Navigator.pushNamedAndRemoveUntil(context, login, (route) => false),
+      () => Navigator.pushNamedAndRemoveUntil(context, mainNavigation, (route) => false),
     );
   }
 

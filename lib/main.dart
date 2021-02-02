@@ -10,6 +10,33 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: primaryColorNormal,
+        scaffoldBackgroundColor: Colors.white,
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          isDense: true,
+          fillColor: Colors.transparent,
+          contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+          disabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: grayscale5),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: grayscale5),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: primaryColorNormal),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: colorRed1),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: colorRed1),
+            borderRadius: BorderRadius.circular(4),
+          ),
+        ),
       ),
       onGenerateRoute: router.Router.generateRoute,
     );
